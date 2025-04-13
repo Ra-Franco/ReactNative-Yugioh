@@ -8,7 +8,7 @@ import {
     StyleSheet,
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
-import SearchFilterBar from "./SearchFilterBar";
+import SearchFilterBar from "../components/SearchFilterBar";
 
 
 const Favorites = () => {

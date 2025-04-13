@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import api from "../services/api";
-import SearchFilterBar from "./SearchFilterBar";
+import SearchFilterBar from "../components/SearchFilterBar";
 import { useIsFocused } from "@react-navigation/native";
 
 const Main = ({ navigation }) => {
