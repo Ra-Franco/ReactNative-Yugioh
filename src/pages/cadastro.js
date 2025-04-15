@@ -14,12 +14,13 @@ export default class CadastrarUsuario extends Component {
     password: "",
     cpf: "",
     nome: "",
-    curso: ""
+    curso: "",
+    telefone: ""
   };
 
   handleCadastro = async () => {
-    const { email, password, cpf, nome, curso } = this.state;
-    if (!email || !password || !cpf || !nome || !curso) {
+    const { email, password, cpf, nome, curso, telefone } = this.state;
+    if (!email || !password || !cpf || !nome || !curso || !telefone) {
       alert("Preencha todos os campos!");
       return;
     }
@@ -28,7 +29,8 @@ export default class CadastrarUsuario extends Component {
       password,
       cpf,
       nome,
-      curso
+      curso,
+      telefone
     };
     await AsyncStorage.setItem("user", JSON.stringify(user));
     alert("Usuário cadastrado com sucesso!");
@@ -68,6 +70,12 @@ export default class CadastrarUsuario extends Component {
           placeholder="Curso"
           value={this.state.curso}
           onChangeText={(curso) => this.setState({ curso })}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Telefone"
+          value={this.state.telefone}
+          onChangeText={(telefone) => this.setState({ telefone })}
         />
         <TouchableOpacity style={styles.button} onPress={this.handleCadastro}>
           <Text style={styles.buttonText}>Cadastrar</Text>
