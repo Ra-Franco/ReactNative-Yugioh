@@ -7,7 +7,6 @@ import {
   View,
   TextInput,
   TouchableOpacity,
-  Alert,
 } from "react-native";
 
 const Login = () => {
@@ -18,14 +17,14 @@ const Login = () => {
 
   const handleLogin = async () => {
     const user = await AsyncStorage.getItem("user")
-    if(!user){
+    if (!user) {
       alert("Nenhum usuário cadastrado!")
       return
     }
     const userJson = JSON.parse(user)
-    if(userJson.email === email && userJson.password === password){
+    if (userJson.email === email && userJson.password === password) {
       navigation.navigate("Main")
-    }else{
+    } else {
       alert("E-mail ou senha inválidos!")
     }
   };
@@ -52,7 +51,7 @@ const Login = () => {
       <TouchableOpacity style={styles.button} onPress={handleLogin}>
         <Text style={styles.buttonText}>Entrar</Text>
       </TouchableOpacity>
-      
+
       <TouchableOpacity style={styles.button} onPress={handleCadastro}>
         <Text style={styles.buttonText}>Cadastrar</Text>
       </TouchableOpacity>

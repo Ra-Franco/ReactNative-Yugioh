@@ -44,28 +44,25 @@ export default class CadastrarUsuario extends Component {
         <TextInput
           style={styles.input}
           placeholder="Senha"
-          secureTextEntry={true}
           value={this.state.password}
+          secureTextEntry={true}
           onChangeText={(password) => this.setState({ password })}
         />
         <TextInput
           style={styles.input}
           placeholder="Nome"
-          secureTextEntry={true}
           value={this.state.nome}
           onChangeText={(nome) => this.setState({ nome })}
         />
         <TextInput
           style={styles.input}
           placeholder="CPF"
-          secureTextEntry={true}
           value={this.state.cpf}
           onChangeText={(cpf) => this.setState({ cpf })}
         />
         <TextInput
           style={styles.input}
           placeholder="Curso"
-          secureTextEntry={true}
           value={this.state.curso}
           onChangeText={(curso) => this.setState({ curso })}
         />
