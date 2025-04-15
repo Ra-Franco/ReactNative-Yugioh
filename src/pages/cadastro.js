@@ -12,11 +12,14 @@ export default class CadastrarUsuario extends Component {
   state = {
     email: "",
     password: "",
+    cpf: "",
+    nome: "",
+    curso: ""
   };
 
   handleCadastro = async () => {
     const { email, password } = this.state;
-    if (!email || !password) {
+    if (!email || !password || !cpf || !nome || !curso) {
       alert("Preencha todos os campos!");
       return;
     }
@@ -44,6 +47,27 @@ export default class CadastrarUsuario extends Component {
           secureTextEntry={true}
           value={this.state.password}
           onChangeText={(password) => this.setState({ password })}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Nome"
+          secureTextEntry={true}
+          value={this.state.nome}
+          onChangeText={(nome) => this.setState({ nome })}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="CPF"
+          secureTextEntry={true}
+          value={this.state.cpf}
+          onChangeText={(cpf) => this.setState({ cpf })}
+        />
+        <TextInput
+          style={styles.input}
+          placeholder="Curso"
+          secureTextEntry={true}
+          value={this.state.curso}
+          onChangeText={(curso) => this.setState({ curso })}
         />
         <TouchableOpacity style={styles.button} onPress={this.handleCadastro}>
           <Text style={styles.buttonText}>Cadastrar</Text>
