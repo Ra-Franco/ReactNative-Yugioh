@@ -18,7 +18,7 @@ export default class CadastrarUsuario extends Component {
   };
 
   handleCadastro = async () => {
-    const { email, password } = this.state;
+    const { email, password, cpf, nome, curso } = this.state;
     if (!email || !password || !cpf || !nome || !curso) {
       alert("Preencha todos os campos!");
       return;
@@ -26,6 +26,9 @@ export default class CadastrarUsuario extends Component {
     const user = {
       email,
       password,
+      cpf,
+      nome,
+      curso
     };
     await AsyncStorage.setItem("user", JSON.stringify(user));
     alert("Usuário cadastrado com sucesso!");
